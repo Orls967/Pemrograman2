@@ -33,7 +33,7 @@ public class Main {
             String warna = scanner.nextLine();
             System.out.print("Kemampuan: ");
             String kemampuanLine = scanner.nextLine();
-            String[] kemampuanArr = kemampuanLine.split(",");
+            String[] kemampuanArr = kemampuanLine.split(", ");
 
             Anjing anjing = new Anjing(nama, ras, warna, kemampuanArr);
             anjing.displayDetailAnjing();
