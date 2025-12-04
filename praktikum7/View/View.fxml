@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
+  <tabs>
+    <Tab text="Data Pelanggan">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+               <Label layoutX="24.0" layoutY="24.0" text="Nama Pelanggan" />
+               <TextField fx:id="txtNama" layoutX="130.0" layoutY="20.0" prefWidth="200.0" />
+               
+               <Label layoutX="24.0" layoutY="60.0" text="Email" />
+               <TextField fx:id="txtEmail" layoutX="130.0" layoutY="56.0" prefWidth="200.0" />
+               
+               <Label layoutX="24.0" layoutY="96.0" text="Telepon" />
+               <TextField fx:id="txtTelepon" layoutX="130.0" layoutY="92.0" prefWidth="200.0" />
+               
+               <Button layoutX="350.0" layoutY="20.0" mnemonicParsing="false" onAction="#onAddPelanggan" prefWidth="80.0" text="Add" />
+               <Button layoutX="350.0" layoutY="56.0" mnemonicParsing="false" onAction="#onEditPelanggan" prefWidth="80.0" text="Edit" />
+               <Button layoutX="350.0" layoutY="92.0" mnemonicParsing="false" onAction="#onDeletePelanggan" prefWidth="80.0" text="Delete" />
+               
+               <TableView fx:id="tblPelanggan" layoutX="20.0" layoutY="140.0" prefHeight="310.0" prefWidth="660.0">
+                 <columns>
+                   <TableColumn fx:id="colNamaPelanggan" prefWidth="230.0" text="Nama" />
+                   <TableColumn fx:id="colEmailPelanggan" prefWidth="230.0" text="Email" />
+                   <TableColumn fx:id="colTeleponPelanggan" prefWidth="200.0" text="Telepon" />
+                 </columns>
+               </TableView>
+            </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+    
+    <Tab text="Data Buku">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+               <Label layoutX="24.0" layoutY="24.0" text="Judul Buku" />
+               <TextField fx:id="txtJudul" layoutX="100.0" layoutY="20.0" prefWidth="200.0" />
+               
+               <Label layoutX="24.0" layoutY="60.0" text="Penulis" />
+               <TextField fx:id="txtPenulis" layoutX="100.0" layoutY="56.0" prefWidth="200.0" />
+               
+               <Label layoutX="320.0" layoutY="24.0" text="Harga (Rp)" />
+               <TextField fx:id="txtHarga" layoutX="400.0" layoutY="20.0" prefWidth="150.0" />
+               
+               <Label layoutX="320.0" layoutY="60.0" text="Stok" />
+               <TextField fx:id="txtStok" layoutX="400.0" layoutY="56.0" prefWidth="150.0" />
+               
+               <Button layoutX="570.0" layoutY="20.0" mnemonicParsing="false" onAction="#onAddBuku" prefWidth="80.0" text="Add" />
+               <Button layoutX="570.0" layoutY="56.0" mnemonicParsing="false" onAction="#onEditBuku" prefWidth="80.0" text="Edit" />
+               <Button layoutX="570.0" layoutY="92.0" mnemonicParsing="false" onAction="#onDeleteBuku" prefWidth="80.0" text="Delete" />
+               
+               <TableView fx:id="tblBuku" layoutX="20.0" layoutY="140.0" prefHeight="310.0" prefWidth="660.0">
+                 <columns>
+                   <TableColumn fx:id="colJudul" prefWidth="250.0" text="Judul" />
+                   <TableColumn fx:id="colPenulis" prefWidth="200.0" text="Penulis" />
+                   <TableColumn fx:id="colHarga" prefWidth="130.0" text="Harga" />
+                   <TableColumn fx:id="colStok" prefWidth="80.0" text="Stok" />
+                 </columns>
+               </TableView>
+            </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+    
+    <Tab text="Transaksi Penjualan">
+       <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+               <Label layoutX="20.0" layoutY="14.0" text="Form Transaksi">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Label>
+               
+               <Label layoutX="20.0" layoutY="50.0" text="Pilih Pelanggan" />
+               <ComboBox fx:id="cbPelanggan" layoutX="120.0" layoutY="46.0" prefWidth="200.0" promptText="-- Pilih Pelanggan --" />
+               
+               <Label layoutX="20.0" layoutY="90.0" text="Pilih Buku" />
+               <ComboBox fx:id="cbBuku" layoutX="120.0" layoutY="86.0" prefWidth="200.0" promptText="-- Pilih Buku --" />
+               
+               <Label layoutX="350.0" layoutY="90.0" text="Jumlah Beli" />
+               <TextField fx:id="txtJumlahJual" layoutX="430.0" layoutY="86.0" prefWidth="80.0" />
+               
+               <Button layoutX="530.0" layoutY="86.0" mnemonicParsing="false" onAction="#onAddPenjualan" prefHeight="25.0" prefWidth="120.0" text="SIMPAN TRANSAKSI" />
+               
+               <TableView fx:id="tblPenjualan" layoutX="20.0" layoutY="140.0" prefHeight="310.0" prefWidth="660.0">
+                 <columns>
+                   <TableColumn fx:id="colJualPelanggan" prefWidth="180.0" text="Pelanggan" />
+                   <TableColumn fx:id="colJualBuku" prefWidth="180.0" text="Buku" />
+                   <TableColumn fx:id="colJualJumlah" prefWidth="80.0" text="Qty" />
+                   <TableColumn fx:id="colJualTotal" prefWidth="120.0" text="Total Harga" />
+                   <TableColumn fx:id="colJualTanggal" prefWidth="100.0" text="Tanggal" />
+                 </columns>
+               </TableView>
+            </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
